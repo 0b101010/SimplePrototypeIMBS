@@ -1,0 +1,13 @@
+executable("testDataEntities") {
+  sources = [
+    "testDataEntities.cpp",
+  ]
+  
+  include_dirs = [ "//dataEntities" ]
+  
+  deps = [
+    "//dataEntities:dataEntities",
+  ]
+
+}
+
