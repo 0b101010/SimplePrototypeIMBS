@@ -14,8 +14,9 @@ namespace  dataEntities {
       int number;
     };
 
-    Seat(std::shared_ptr<Theater> theTheater, Position thePosition);
+    Seat(Position thePosition);
     
+    std::shared_ptr<Seat> clone();
     std::shared_ptr<Ticket> getTicket();
     void setTicket(const std::shared_ptr<Ticket> & theTicket);
     std::shared_ptr<Theater> getTheater();
@@ -29,4 +30,23 @@ namespace  dataEntities {
     Position position;
 
   };
+
+  inline int SeatPositionCmp( const Seat::Position & lhs, const Seat::Position & rhs) {
+    int rowDiff = lhs.row - rhs.row;
+    int numberDiff = lhs.number - rhs.number;
+    if(rowDiff == 0) {
+      return numberDiff;
+    }
+    return rowDiff;
+  }
+  
+  inline bool operator==(const Seat::Position & lhs, const Seat::Position & rhs){ return SeatPositionCmp(lhs,rhs) == 0; }
+  inline bool operator!=(const Seat::Position & lhs, const Seat::Position & rhs){ return SeatPositionCmp(lhs,rhs) != 0; }
+  inline bool operator< (const Seat::Position & lhs, const Seat::Position & rhs){ return SeatPositionCmp(lhs,rhs) <  0; }
+  inline bool operator> (const Seat::Position & lhs, const Seat::Position & rhs){ return SeatPositionCmp(lhs,rhs) >  0; }
+  inline bool operator<=(const Seat::Position & lhs, const Seat::Position & rhs){ return SeatPositionCmp(lhs,rhs) <= 0; }
+  inline bool operator>=(const Seat::Position & lhs, const Seat::Position & rhs){ return SeatPositionCmp(lhs,rhs) >= 0; }
+
 } /*dataEntities */  
+
+

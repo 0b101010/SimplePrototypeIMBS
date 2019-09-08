@@ -5,6 +5,8 @@ static_library("dataEntities") {
     "Seat.hpp",
     "Theater.cpp",
     "Theater.hpp",
+    "TheaterShow.cpp",
+    "TheaterShow.hpp",
     "Ticket.cpp",
     "Ticket.hpp",
   ]

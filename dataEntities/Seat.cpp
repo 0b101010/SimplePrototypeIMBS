@@ -4,11 +4,14 @@
 
 namespace  dataEntities {
 
-  Seat::Seat(std::shared_ptr<Theater> theTheater, Position thePosition)
-    : theater(theTheater)
-    , position(thePosition) {
+  Seat::Seat(Position thePosition)
+    : position(thePosition) {
   }
   
+  std::shared_ptr<Seat> Seat::clone() {
+      return std::make_shared<Seat>(position);
+  }
+
   std::shared_ptr<Ticket> Seat::getTicket() {
       return ticket;
   }
