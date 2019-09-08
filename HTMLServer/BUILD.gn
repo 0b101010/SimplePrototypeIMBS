@@ -1,0 +1,14 @@
+executable("htmlServer") {
+  sources = [
+  ]
+  
+    include_dirs = [
+    "//server",
+    "//util",
+  ]
+  
+  deps = [
+    "//util:util",
+    "//server:server",
+  ]
+} 

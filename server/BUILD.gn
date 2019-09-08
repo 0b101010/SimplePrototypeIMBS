@@ -1,0 +1,16 @@
+static_library("server") {
+  sources = [
+    "TheaterMgrServer.hpp",
+  ]
+  
+    include_dirs = [
+    "//interaction",
+    "//dataEntities",
+    "//util",
+  ]
+  
+  deps = [
+    "//util:util",
+    "//interaction:interaction",
+  ]
+} 
