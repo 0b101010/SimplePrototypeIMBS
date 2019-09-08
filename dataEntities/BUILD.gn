@@ -1,5 +1,6 @@
 static_library("dataEntities") {
   sources = [
+    "Movie.cpp",
     "Movie.hpp",
     "Seat.cpp",
     "Seat.hpp",
@@ -10,5 +11,9 @@ static_library("dataEntities") {
     "Ticket.cpp",
     "Ticket.hpp",
   ]
-  include_dirs = [ "." ]
+  include_dirs = [ ".", "//util", ]
+  
+  deps = [
+    "//util:util",
+  ]
 } 

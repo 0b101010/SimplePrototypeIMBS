@@ -1,6 +1,9 @@
 group("root") {
   deps = [
+    "//util:util",
     "//dataEntities:dataEntities",
+    "//interaction:interaction",
     "//test:testDataEntities",
+    "//test:testInteraction",
   ]
 }

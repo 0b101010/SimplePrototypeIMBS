@@ -3,11 +3,30 @@ executable("testDataEntities") {
     "testDataEntities.cpp",
   ]
   
-  include_dirs = [ "//dataEntities" ]
+  include_dirs = [
+    "//dataEntities",
+    "//util",
+  ]
   
   deps = [
+    "//util:util",
     "//dataEntities:dataEntities",
   ]
-
 }
 
+executable("testInteraction") {
+  sources = [
+    "testInteraction.cpp",
+  ]
+  
+  include_dirs = [
+    "//interaction",
+    "//dataEntities",
+    "//util",
+  ]
+  
+  deps = [
+    "//util:util",
+    "//interaction:interaction",
+  ]
+}

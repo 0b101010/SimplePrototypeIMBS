@@ -12,13 +12,13 @@ namespace  dataEntities {
     Theater(const std::string & theName, int noSeatsX, int noSeatsY, const std::string & theDescription = std::string());
     virtual ~Theater();
     
-    std::string getName() {
+    const std::string & getName() const {
       return name;
     };
-    std::string getDescription() {
+    const std::string & getDescription() const {
       return description;
     };
-    int getNumberOfSeats() {
+    int getNumberOfSeats() const {
       return noSeats;
     };
     

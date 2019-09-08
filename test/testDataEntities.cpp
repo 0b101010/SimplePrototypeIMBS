@@ -1,19 +1,16 @@
 #include "Theater.hpp"
 #include "TheaterShow.hpp"
 #include "Movie.hpp"
+#include "TimeUtil.hpp"
 
 #include <iostream>
 #include <memory>
-#include <chrono>
-#include <sstream>
-#include <string>
-#include <iomanip>
-#include <ctime>
 #include <boost/format.hpp>
 
 using namespace std;
 using namespace boost;
 using namespace dataEntities;
+using namespace util;
 
 int main() {
 
@@ -21,11 +18,8 @@ int main() {
   t01.dumpSeatMatrix();
   cout << "********************************************" << endl;
 
-  auto m1 = std::make_shared<Movie>(Movie{"The return of C", "A hooror movie", 123});  
-  std::tm tm = {};
-  std::stringstream ss("Jan 11 2020 17:35:00");
-  ss >> std::get_time(&tm, "%b %d %Y %H:%M:%S");
-  auto start = chrono::system_clock::from_time_t(std::mktime(&tm));
+  auto m1 = std::make_shared<Movie>("The return of C", "A horror movie", 123);  
+  auto start = toTimePoint("Jan 11 2020 17:35:00");
   TheaterShow ts01(t01, m1, start);
   
   std::vector<Seat::Position> seats;

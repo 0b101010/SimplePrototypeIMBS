@@ -1,5 +1,6 @@
 #include "TheaterShow.hpp"
 
+#include "Movie.hpp"
 
 namespace  dataEntities {
 
